@@ -36,14 +36,32 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 	<link rel="stylesheet" href="w3-colors-flat.css">
 </head> 
 
+<!-- Added script function for the results page; added functions to add variable for each response; added percentage function to calculate probability -->
 <script>
+	
+	var anxietyattack_count = 0;
+        var panicattack_count = 0;
 
-	//YOUR JAVASCRIPT GOES HERE
+
+        function anxietyattackAdd(){
+            anxietyattack_count = anxietyattack_count + 1;
+		alert(anxietyattack_count);
+
+        }
+
+        function panicattackAdd(){
+            panicattack_count = panicattack_count + 1;
+        }
+	
+	function getResults(){
+		var anxietyattackPercent = (anxietyattack_count / 4) * 100;
+		var panicattackPercent = (panicattack_count / 4) * 100;
+			document.getElementById("results").innerHTML = "Probability it is an anxiety attack = " + anxietyattackPercent + "<br> Probability it is a cold = " + panicattackPercent;
+	}
 
 </script>	
 
-
-<!-- THIS STYLE CODE HELPS MAKE YOUR APP LOOK GOOD. PROBABLY DONT MESS WITH IT -->
+<!-- Didn't change the style code as to not mess up my code -->
 <style>	
 .body {
      margin: 0em;
